@@ -32,12 +32,12 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255', 'unique:users,name'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-            // Password: min 8, max 10, confirmed
-            'password' => ['required', 'string', 'min:8', 'max:10', 'confirmed'],
+            // Allow longer passwords for better security
+            'password' => ['required', 'string', 'min:8', 'max:64', 'confirmed'],
         ], [
             'name.unique' => 'This user name already exist',
             'email.unique' => 'This user name already exist',
-            'password.max' => 'Password must be at most 10 characters',
+            'password.max' => 'Password must be at most 64 characters',
             'password.min' => 'Password must be at least 8 characters',
         ]);
 
@@ -51,6 +51,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+        // Redirect to home after registration
+        return redirect('/');
     }
 }

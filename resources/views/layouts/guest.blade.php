@@ -102,7 +102,7 @@
                         <div class="flex items-center justify-between">
                             <label class="inline-flex items-center text-sm"><input type="checkbox" name="remember" class="mr-2">Remember me</label>
                             @if (Route::has('password.request'))
-                                <a href="{{ route('password.request') }}" class="text-sm underline">Forgot?</a>
+                                <a href="{{ route('password.request') }}" class="text-sm underline">Forgot password?</a>
                             @endif
                         </div>
                         <button class="w-full bg-gradient-hero text-white py-2 rounded-lg">Log in</button>

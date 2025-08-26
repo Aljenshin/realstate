@@ -104,15 +104,68 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#home" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">Home</a>
-                        <a href="#properties" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">Properties</a>
-                        <a href="#services" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">Services</a>
-                        <a href="#about" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">About</a>
-                        <a href="#agents" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors">Agents</a>
+                        
+                        <!-- Properties Dropdown -->
+                        <div class="relative group" x-data="{ open: false }">
+                            <button @click="open = !open" @click.away="open = false" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                                Properties
+                                <svg class="ml-1 h-4 w-4 transition-transform" :class="{ 'rotate-180': open }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-95" class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                                <a href="#properties" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">All Properties</a>
+                                <a href="#buying" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Buying Guide</a>
+                                <a href="#selling" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Selling Guide</a>
+                                <a href="#market" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Market Analysis</a>
+                                <a href="#home-values" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Home Values</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Services Dropdown -->
+                        <div class="relative group" x-data="{ open: false }">
+                            <button @click="open = !open" @click.away="open = false" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                                Services
+                                <svg class="ml-1 h-4 w-4 transition-transform" :class="{ 'rotate-180': open }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-95" class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                                <a href="#services" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">All Services</a>
+                                <a href="#consultation" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Free Consultation</a>
+                                <a href="#valuation" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Property Valuation</a>
+                                <a href="#investment" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Investment Advisory</a>
+                                <a href="#legal" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Legal Services</a>
+                            </div>
+                        </div>
+                        
+                        <!-- About Dropdown -->
+                        <div class="relative group" x-data="{ open: false }">
+                            <button @click="open = !open" @click.away="open = false" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                                About
+                                <svg class="ml-1 h-4 w-4 transition-transform" :class="{ 'rotate-180': open }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform scale-95" x-transition:enter-end="opacity-100 transform scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 transform scale-100" x-transition:leave-end="opacity-0 transform scale-95" class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+                                <a href="#about" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Our Story</a>
+                                <a href="#team" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Our Team</a>
+                                <a href="#agents" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Agents</a>
+                                <a href="#careers" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Careers</a>
+                                <a href="#testimonials" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900">Testimonials</a>
+                            </div>
+                        </div>
+                        
                         <a href="#contact" class="bg-gradient-hero text-white px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105">Contact</a>
                         @auth
-                            <div class="relative group">
-                                <button class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900">Hi, {{ auth()->user()->name }}</button>
-                                <div class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border opacity-0 group-hover:opacity-100 invisible group-hover:visible transition">
+                            <div class="relative" x-data="{ open:false, t:null, openMenu(){ this.cancel(); this.open=true }, delayed(){ this.cancel(); this.t=setTimeout(()=>this.open=false, 400) }, cancel(){ if(this.t){ clearTimeout(this.t); this.t=null } } }">
+                                <button @click="open = !open" @mouseenter="openMenu()" @mouseleave="delayed()" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 flex items-center">
+                                    Hi, {{ auth()->user()->name }}
+                                    <svg class="ml-1 h-4 w-4 transition-transform" :class="{ 'rotate-180': open }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </button>
+                                <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border py-2 z-50" @mouseenter="openMenu()" @mouseleave="delayed()" @keydown.escape.window="open=false" style="display:none;">
                                     <a href="{{ route('dashboard') }}" class="block px-4 py-2 text-sm hover:bg-gray-50">Dashboard</a>
                                     <form method="POST" action="{{ route('logout') }}" class="border-t">
                                         @csrf
@@ -123,6 +176,9 @@
                         @else
                             <a href="{{ route('login') }}" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">Login</a>
                             <a href="{{ route('register') }}" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">Register</a>
+                        @endauth
+                        @auth
+                            <a href="{{ route('properties.create') }}" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">Post Property</a>
                         @endauth
                     </div>
                 </div>
@@ -141,15 +197,37 @@
              <div id="mobileMenu" class="md:hidden hidden">
                  <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white rounded-lg mt-2 shadow-lg">
                      <a href="#home" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors">Home</a>
-                     <a href="#properties" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors">Properties</a>
-                     <a href="#services" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors">Services</a>
-                     <a href="#about" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors">About</a>
-                     <a href="#agents" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors">Agents</a>
-                     <a href="#market" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors">Search</a>
-                     <a href="#buying" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors">Buying</a>
-                     <a href="#selling" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors">Selling</a>
-                     <a href="#home-values" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors">Home Values</a>
-                     <a href="#careers" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-3 py-2 text-base font-medium transition-colors">Careers</a>
+                     
+                     <!-- Properties Mobile Section -->
+                     <div class="border-t border-gray-200 pt-2">
+                         <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Properties</div>
+                         <a href="#properties" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">All Properties</a>
+                         <a href="#buying" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Buying Guide</a>
+                         <a href="#selling" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Selling Guide</a>
+                         <a href="#market" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Market Analysis</a>
+                         <a href="#home-values" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Home Values</a>
+                     </div>
+                     
+                     <!-- Services Mobile Section -->
+                     <div class="border-t border-gray-200 pt-2">
+                         <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Services</div>
+                         <a href="#services" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">All Services</a>
+                         <a href="#consultation" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Free Consultation</a>
+                         <a href="#valuation" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Property Valuation</a>
+                         <a href="#investment" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Investment Advisory</a>
+                         <a href="#legal" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Legal Services</a>
+                     </div>
+                     
+                     <!-- About Mobile Section -->
+                     <div class="border-t border-gray-200 pt-2">
+                         <div class="px-3 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">About</div>
+                         <a href="#about" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Our Story</a>
+                         <a href="#team" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Our Team</a>
+                         <a href="#agents" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Agents</a>
+                         <a href="#careers" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Careers</a>
+                         <a href="#testimonials" onclick="closeMobileMenu()" class="text-gray-700 hover:text-gray-900 block px-6 py-2 text-base font-medium transition-colors">Testimonials</a>
+                     </div>
+                     
                      <a href="#contact" onclick="closeMobileMenu()" class="bg-gradient-hero text-white px-6 py-2 rounded-full text-base font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105 block text-center">Contact</a>
                  </div>
              </div>
@@ -178,7 +256,7 @@
         </div>
         <!-- Decorative parallax cards -->
         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" class="hidden md:block absolute left-10 bottom-20 w-64 h-40 object-cover rounded-2xl shadow-xl parallax-medium" alt="living">
-        <img src="https://images.unsplash.com/photo-1600585154515-011c3b81a6ff?auto=format&fit=crop&w=1200&q=80" class="hidden md:block absolute right-14 top-28 w-72 h-48 object-cover rounded-2xl shadow-xl parallax-fast" alt="kitchen">
+        <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1200&q=80" class="hidden md:block absolute right-14 top-28 w-72 h-48 object-cover rounded-2xl shadow-xl parallax-fast" alt="kitchen">
         
         <!-- Content -->
         <div class="relative" style="z-index: 10; text-align: center; color: white; padding: 0 1rem; max-width: 72rem; margin: 0 auto;">
@@ -194,9 +272,11 @@
                 <button onclick="scrollToSection('properties')" class="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     Explore Properties
                 </button>
+                @guest
                 <button onclick="openAuthModal('register')" class="glass-effect text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     Create Account
                 </button>
+                @endguest
             </div>
         </div>
         
@@ -487,11 +567,227 @@
                 </div>
             </div>
             
+            <!-- Third Row of Properties -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Property 7 -->
+                <div class="scroll-reveal glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 group" style="animation-delay: 1.2s;">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80" 
+                             alt="Luxury Condo with City View" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy" decoding="async">
+                        <div class="absolute top-4 right-4 bg-white text-gray-900 px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                            ₱75M
+                        </div>
+                        <div class="absolute top-4 left-4 bg-indigo-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                            City View
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Luxury Condo</h3>
+                        <p class="text-gray-600 mb-4">Rockwell, Makati</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span>2 Beds</span>
+                            <span>2 Baths</span>
+                            <span>180 sq m</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="openPropertyInquiry('Luxury Condo', '₱75M', 'Rockwell')" class="flex-1 bg-gradient-hero text-white py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                                Inquire Now
+                            </button>
+                            <button onclick="openPropertyGallery('Luxury Condo', ['https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2053&q=80', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2070&q=80', 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2070&q=80', 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=2070&q=80'])" class="px-3 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property 8 -->
+                <div class="scroll-reveal glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 group" style="animation-delay: 1.4s;">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Garden Villa with Pool" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy" decoding="async">
+                        <div class="absolute top-4 right-4 bg-white text-gray-900 px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                            ₱95M
+                        </div>
+                        <div class="absolute top-4 left-4 bg-teal-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                            Pool Villa
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Garden Villa</h3>
+                        <p class="text-gray-600 mb-4">Ayala Alabang, Muntinlupa</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span>4 Beds</span>
+                            <span>3 Baths</span>
+                            <span>280 sq m</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="openPropertyInquiry('Garden Villa', '₱95M', 'Ayala Alabang')" class="flex-1 bg-gradient-hero text-white py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                                Inquire Now
+                            </button>
+                            <button onclick="openPropertyGallery('Garden Villa', ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2070&q=80', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2053&q=80', 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2070&q=80', 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=2070&q=80'])" class="px-3 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property 9 -->
+                <div class="scroll-reveal glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 group" style="animation-delay: 1.6s;">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Mountain Retreat House" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy" decoding="async">
+                        <div class="absolute top-4 right-4 bg-white text-gray-900 px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                            ₱180M
+                        </div>
+                        <div class="absolute top-4 left-4 bg-emerald-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                            Mountain View
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Mountain Retreat</h3>
+                        <p class="text-gray-600 mb-4">Tagaytay Highlands, Cavite</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span>5 Beds</span>
+                            <span>4 Baths</span>
+                            <span>450 sq m</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="openPropertyInquiry('Mountain Retreat', '₱180M', 'Tagaytay Highlands')" class="flex-1 bg-gradient-hero text-white py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                                Inquire Now
+                            </button>
+                            <button onclick="openPropertyGallery('Mountain Retreat', ['https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2070&q=80', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2053&q=80', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2070&q=80', 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=2070&q=80'])" class="px-3 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fourth Row of Properties -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Property 10 -->
+                <div class="scroll-reveal glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 group" style="animation-delay: 1.8s;">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Smart Home with Technology" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy" decoding="async">
+                        <div class="absolute top-4 right-4 bg-white text-gray-900 px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                            ₱110M
+                        </div>
+                        <div class="absolute top-4 left-4 bg-cyan-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                            Smart Home
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Smart Home</h3>
+                        <p class="text-gray-600 mb-4">Nuvali, Laguna</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span>3 Beds</span>
+                            <span>3 Baths</span>
+                            <span>220 sq m</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="openPropertyInquiry('Smart Home', '₱110M', 'Nuvali')" class="flex-1 bg-gradient-hero text-white py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                                Inquire Now
+                            </button>
+                            <button onclick="openPropertyGallery('Smart Home', ['https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=2070&q=80', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2053&q=80', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2070&q=80', 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2070&q=80'])" class="px-3 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property 11 -->
+                <div class="scroll-reveal glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 group" style="animation-delay: 2.0s;">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Waterfront Penthouse" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy" decoding="async">
+                        <div class="absolute top-4 right-4 bg-white text-gray-900 px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                            ₱150M
+                        </div>
+                        <div class="absolute top-4 left-4 bg-blue-500 text-white px-2 py-1 rounded text-xs font-semibold">
+                            Waterfront
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Waterfront Penthouse</h3>
+                        <p class="text-gray-600 mb-4">Marina Bay, Pasay</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span>4 Beds</span>
+                            <span>3 Baths</span>
+                            <span>320 sq m</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="openPropertyInquiry('Waterfront Penthouse', '₱150M', 'Marina Bay')" class="flex-1 bg-gradient-hero text-white py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                                Inquire Now
+                            </button>
+                            <button onclick="openPropertyGallery('Waterfront Penthouse', ['https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2070&q=80', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2053&q=80', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2070&q=80', 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2070&q=80'])" class="px-3 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Property 12 -->
+                <div class="scroll-reveal glass-effect rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-500 group" style="animation-delay: 2.2s;">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1565182999561-18d7f0b9f6c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Golf Course Villa" 
+                             class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                             loading="lazy" decoding="async">
+                        <div class="absolute top-4 right-4 bg-white text-gray-900 px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                            ₱200M
+                        </div>
+                        <div class="absolute top-4 left-4 bg-green-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                            Golf Course
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Golf Course Villa</h3>
+                        <p class="text-gray-600 mb-4">Santa Rosa Golf Club, Laguna</p>
+                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                            <span>5 Beds</span>
+                            <span>4 Baths</span>
+                            <span>380 sq m</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="openPropertyInquiry('Golf Course Villa', '₱200M', 'Santa Rosa Golf Club')" class="flex-1 bg-gradient-hero text-white py-2 rounded-lg font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                                Inquire Now
+                            </button>
+                            <button onclick="openPropertyGallery('Golf Course Villa', ['https://images.unsplash.com/photo-1565182999561-18d7f0b9f6c4?auto=format&fit=crop&w=2070&q=80', 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2053&q=80', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2070&q=80', 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2070&q=80'])" class="px-3 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <!-- View All Properties Button -->
-            <div class="text-center">
-                <button onclick="openAllPropertiesModal()" class="bg-gradient-hero text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <div class="flex justify-center mt-6">
+                <a href="{{ route('properties.index') }}" class="bg-gradient-hero text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                     View All Properties
-                </button>
+                </a>
             </div>
         </div>
     </section>
@@ -1008,29 +1304,72 @@
         <div class="bg-white rounded-2xl max-w-6xl w-full p-6 relative max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('allPropertiesModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
             <h3 class="text-2xl font-bold text-gray-900 mb-6">All Available Properties</h3>
+
+            @php
+                // Flatten the grouped collection to get all properties in one list
+                $allProperties = collect();
+                if (isset($propertiesByLocation) && $propertiesByLocation instanceof \Illuminate\Support\Collection) {
+                    $allProperties = $propertiesByLocation->flatten(1);
+                }
+                $shown = $allProperties->count();
+                $targetCards = 12;
+                $short = max(0, $targetCards - $shown);
+                $sampleCards = [
+                    ['title' => 'Modern Loft in BGC', 'price' => '₱18,500,000', 'location' => 'BGC, Taguig', 'image' => 'https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1600&auto=format&fit=crop'],
+                    ['title' => 'Premium Condo in Makati', 'price' => '₱22,000,000', 'location' => 'Makati City', 'image' => 'https://images.unsplash.com/photo-1500048993953-d23a436266cf?q=80&w=1600&auto=format&fit=crop'],
+                    ['title' => 'Family House with Garden', 'price' => '₱35,000,000', 'location' => 'Quezon City', 'image' => 'https://images.unsplash.com/photo-1600585154515-011c3b81a6ff?q=80&w=1600&auto=format&fit=crop'],
+                    ['title' => 'Skyline Penthouse', 'price' => '₱48,000,000', 'location' => 'Ortigas Center', 'image' => 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=1600&auto=format&fit=crop'],
+                    ['title' => 'Beachfront Villa', 'price' => '₱160,000,000', 'location' => 'Boracay', 'image' => 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop'],
+                    ['title' => 'Alabang Village House', 'price' => '₱45,000,000', 'location' => 'Alabang, Muntinlupa', 'image' => 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1600&auto=format&fit=crop'],
+                    ['title' => 'Stylish Studio', 'price' => '₱6,800,000', 'location' => 'Mandaluyong', 'image' => 'https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1600&auto=format&fit=crop'],
+                    ['title' => 'Corner Unit Condo', 'price' => '₱12,500,000', 'location' => 'Pasig City', 'image' => 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop'],
+                    ['title' => 'Suburban Home', 'price' => '₱19,800,000', 'location' => 'Cavite', 'image' => 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1600&auto=format&fit=crop'],
+                    ['title' => 'Golf Estate House', 'price' => '₱55,000,000', 'location' => 'Sta. Rosa, Laguna', 'image' => 'https://images.unsplash.com/photo-1472224371017-08207f84aaae?q=80&w=1600&auto=format&fit=crop'],
+                    ['title' => 'Downtown Apartment', 'price' => '₱9,900,000', 'location' => 'Cebu IT Park', 'image' => 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1600&auto=format&fit=crop'],
+                    ['title' => 'Executive Suite', 'price' => '₱28,000,000', 'location' => 'BGC, Taguig', 'image' => 'https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=1600&auto=format&fit=crop'],
+                ];
+            @endphp
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Additional properties will be listed here -->
-                <div class="border rounded-lg p-4">
-                    <h4 class="font-semibold text-lg">Luxury Condo</h4>
-                    <p class="text-gray-600">₱75M - Rockwell, Makati</p>
-                    <button onclick="openPropertyInquiry('Luxury Condo', '₱75M', 'Rockwell')" class="mt-2 w-full bg-gradient-hero text-white py-2 rounded text-sm">
-                        Inquire
-                    </button>
-                </div>
-                <div class="border rounded-lg p-4">
-                    <h4 class="font-semibold text-lg">Garden Villa</h4>
-                    <p class="text-gray-600">₱85M - Alabang, Muntinlupa</p>
-                    <button onclick="openPropertyInquiry('Garden Villa', '₱85M', 'Alabang')" class="mt-2 w-full bg-gradient-hero text-white py-2 rounded text-sm">
-                        Inquire
-                    </button>
-                </div>
-                <div class="border rounded-lg p-4">
-                    <h4 class="font-semibold text-lg">Penthouse Suite</h4>
-                    <p class="text-gray-600">₱120M - BGC, Taguig</p>
-                    <button onclick="openPropertyInquiry('Penthouse Suite', '₱120M', 'BGC')" class="mt-2 w-full bg-gradient-hero text-white py-2 rounded text-sm">
-                        Inquire
-                    </button>
-                </div>
+                {{-- Real properties from DB --}}
+                @foreach($allProperties as $p)
+                    <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="h-40 w-full bg-gray-100">
+                            <img src="{{ $p->featured_image_url }}" alt="{{ $p->title }}" class="h-40 w-full object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-semibold text-lg line-clamp-1">{{ $p->title }}</h4>
+                            <p class="text-gray-600 text-sm mb-2">₱{{ number_format($p->price ?? 0, 0) }} - {{ $p->location }}</p>
+                            <button onclick="openPropertyInquiry('{{ addslashes($p->title) }}','₱{{ number_format($p->price ?? 0, 0) }}','{{ addslashes($p->location) }}')" class="mt-2 w-full bg-gradient-hero text-white py-2 rounded text-sm">
+                                Inquire
+                            </button>
+                        </div>
+                    </div>
+                @endforeach
+
+                {{-- Sample top-up cards to keep the grid full and with images --}}
+                @for($i = 0; $i < $short; $i++)
+                    @php $s = $sampleCards[$i % count($sampleCards)]; @endphp
+                    <div class="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition">
+                        <div class="h-40 w-full bg-gray-100">
+                            <img src="{{ $s['image'] }}" alt="{{ $s['title'] }}" class="h-40 w-full object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-semibold text-lg line-clamp-1">{{ $s['title'] }}</h4>
+                            <p class="text-gray-600 text-sm mb-2">{{ $s['price'] }} - {{ $s['location'] }}</p>
+                            <button onclick="openPropertyInquiry('{{ addslashes($s['title']) }}','{{ $s['price'] }}','{{ addslashes($s['location']) }}')" class="mt-2 w-full bg-gradient-hero text-white py-2 rounded text-sm">
+                                Inquire
+                            </button>
+                        </div>
+                    </div>
+                @endfor
+
+                {{-- If absolutely no data and no samples requested --}}
+                @if($shown === 0 && $short === 0)
+                    <div class="col-span-3 text-center text-gray-500 py-8">
+                        No properties found.
+                    </div>
+                @endif
             </div>
         </div>
     </div>
@@ -1222,6 +1561,108 @@
         </div>
     </section>
 
+    <!-- Auth Modal -->
+    <div id="authModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/60" onclick="closeAuthModal()"></div>
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+            <!-- Left image -->
+            <div class="hidden md:block relative">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80" alt="Auth" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+            <!-- Right forms -->
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex gap-2">
+                        <button id="tabLogin" class="px-4 py-2 rounded-full bg-gray-900 text-white text-sm" onclick="switchAuthTab('login')">Log in</button>
+                        <button id="tabRegister" class="px-4 py-2 rounded-full bg-gray-200 text-gray-800 text-sm" onclick="switchAuthTab('register')">Sign up</button>
+                    </div>
+                    <button onclick="closeAuthModal()" class="text-gray-500 hover:text-gray-700">&times;</button>
+                </div>
+                <!-- Login form -->
+                <form id="loginForm" method="POST" action="{{ route('login') }}" class="space-y-4">
+                    @csrf
+                    <div>
+                        <label class="text-sm font-medium">Email</label>
+                        <input type="email" name="email" required class="mt-1 w-full border rounded-lg px-3 py-2" />
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium">Password</label>
+                        <input type="password" name="password" required class="mt-1 w-full border rounded-lg px-3 py-2" />
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <label class="inline-flex items-center text-sm"><input type="checkbox" name="remember" class="mr-2">Remember me</label>
+                        @if (Route::has('password.request'))
+                            <a href="{{ route('password.request') }}" class="text-sm underline">Forgot password?</a>
+                        @endif
+                    </div>
+                    <button class="w-full bg-gradient-hero text-white py-2 rounded-lg">Log in</button>
+                </form>
+                <!-- Register form -->
+                <form id="registerForm" method="POST" action="{{ route('register') }}" class="space-y-4 hidden">
+                    @csrf
+                    <div>
+                        <label class="text-sm font-medium">Username</label>
+                        <input type="text" name="name" required class="mt-1 w-full border rounded-lg px-3 py-2" />
+                        <p class="text-xs text-gray-500 mt-1">Must be unique.</p>
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium">Email</label>
+                        <input type="email" name="email" required class="mt-1 w-full border rounded-lg px-3 py-2" />
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium">Password (8–10)</label>
+                        <input type="password" name="password" required class="mt-1 w-full border rounded-lg px-3 py-2" />
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium">Confirm Password</label>
+                        <input type="password" name="password_confirmation" required class="mt-1 w-full border rounded-lg px-3 py-2" />
+                    </div>
+                    <button class="w-full bg-gradient-hero text-white py-2 rounded-lg">Create account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <!-- WhatsApp Floating Button removed -->
+
+    <!-- Live Chat Widget -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleLiveChat()" class="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Live Chat Modal -->
+    <div id="liveChatModal" class="fixed bottom-24 right-6 z-50 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl w-80 max-h-96 flex flex-col">
+            <div class="bg-gradient-hero text-white p-4 rounded-t-2xl">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-semibold">Live Chat</h3>
+                    <button onclick="toggleLiveChat()" class="text-white hover:text-gray-200">&times;</button>
+                </div>
+                <p class="text-sm opacity-90">We're online! Ask us anything.</p>
+            </div>
+            <div class="flex-1 p-4 overflow-y-auto" id="chatMessages">
+                <div class="bg-gray-100 rounded-lg p-3 mb-3">
+                    <p class="text-sm text-gray-700">👋 Hi! Welcome to GintoLand Homes. How can I help you today?</p>
+                </div>
+            </div>
+            <div class="p-4 border-t">
+                <div class="flex gap-2">
+                    <input type="text" id="chatInput" placeholder="Type your message..." 
+                           class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button onclick="sendChatMessage()" class="bg-gradient-hero text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300">
+                        Send
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Parallax effect
         window.addEventListener('scroll', () => {
@@ -1276,6 +1717,11 @@
         function openPropertyInquiry(propertyName, price, location) {
             document.getElementById('propertyName').value = propertyName + ' - ' + location;
             document.getElementById('propertyPrice').value = price;
+            // Hide other modals that might be open (e.g., All Properties)
+            const allProps = document.getElementById('allPropertiesModal');
+            if (allProps && !allProps.classList.contains('hidden')) {
+                allProps.classList.add('hidden');
+            }
             document.getElementById('inquiryModal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
@@ -1564,45 +2010,39 @@
              setTimeout(()=> toast.remove(), 3000);
              this.reset();
          });
+
+         // Auth Modal functions
+         function openAuthModal(which = 'login') {
+             const modal = document.getElementById('authModal');
+             modal.classList.remove('hidden');
+             modal.classList.add('flex');
+             switchAuthTab(which);
+         }
+         function closeAuthModal() {
+             const modal = document.getElementById('authModal');
+             modal.classList.add('hidden');
+             modal.classList.remove('flex');
+         }
+         function switchAuthTab(which) {
+             const loginForm = document.getElementById('loginForm');
+             const registerForm = document.getElementById('registerForm');
+             const tabLogin = document.getElementById('tabLogin');
+             const tabRegister = document.getElementById('tabRegister');
+             if (which === 'login') {
+                 loginForm.classList.remove('hidden');
+                 registerForm.classList.add('hidden');
+                 tabLogin.classList.add('bg-gray-900','text-white');
+                 tabRegister.classList.remove('bg-gray-900','text-white');
+                 tabRegister.classList.add('bg-gray-200','text-gray-800');
+             } else {
+                 registerForm.classList.remove('hidden');
+                 loginForm.classList.add('hidden');
+                 tabRegister.classList.add('bg-gray-900','text-white');
+                 tabLogin.classList.remove('bg-gray-900','text-white');
+                 tabLogin.classList.add('bg-gray-200','text-gray-800');
+             }
+         }
+         window.openAuthModal = openAuthModal;
      </script>
-
-     <!-- WhatsApp Floating Button -->
-     <!-- WhatsApp Floating Button removed -->
-
-     <!-- Live Chat Widget -->
-     <div class="fixed bottom-6 right-6 z-50">
-         <button onclick="toggleLiveChat()" class="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center">
-             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-             </svg>
-         </button>
-     </div>
-
-     <!-- Live Chat Modal -->
-     <div id="liveChatModal" class="fixed bottom-24 right-6 z-50 hidden">
-         <div class="bg-white rounded-2xl shadow-2xl w-80 max-h-96 flex flex-col">
-             <div class="bg-gradient-hero text-white p-4 rounded-t-2xl">
-                 <div class="flex items-center justify-between">
-                     <h3 class="font-semibold">Live Chat</h3>
-                     <button onclick="toggleLiveChat()" class="text-white hover:text-gray-200">&times;</button>
-                 </div>
-                 <p class="text-sm opacity-90">We're online! Ask us anything.</p>
-             </div>
-             <div class="flex-1 p-4 overflow-y-auto" id="chatMessages">
-                 <div class="bg-gray-100 rounded-lg p-3 mb-3">
-                     <p class="text-sm text-gray-700">👋 Hi! Welcome to GintoLand Homes. How can I help you today?</p>
-                 </div>
-             </div>
-             <div class="p-4 border-t">
-                 <div class="flex gap-2">
-                     <input type="text" id="chatInput" placeholder="Type your message..." 
-                            class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                     <button onclick="sendChatMessage()" class="bg-gradient-hero text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-300">
-                         Send
-                     </button>
-                 </div>
-             </div>
-         </div>
-     </div>
 </body>
 </html>
